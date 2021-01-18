@@ -1,32 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState } from 'react';
-import { Text, TextInput, Switch, Button, Image } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
-import * as Permissions from 'expo-permissions';
 
-import Screen from './app/components/Screen';
-import ImageInput from './app/components/ImageInput';
+import React from 'react';
+import { Text, Button } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
-import WelcomeScreen from './app/screens/WelcomeScreen';
-import ListScreen from './app/screens/ListScreen';
-import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
-import ViewImageScreen from './app/screens/ViewImageScreen';
-import MessagesScreen from './app/screens/MessagesScreen';
-import AccountScreen from './app/screens/AccountScreen';
-import ListingsScreen from './app/screens/ListingsScreen';
-import LoginScreen from './app/screens/LoginScreen';
-import ListingEditScreen from './app/screens/ListingEditScreen';
+
+import AuthNavigator from './app/navigation/AuthNavigator';
+import AppNavigator from './app/navigation/AppNavigator';
+import navigationTheme from './app/navigation/navigationTheme';
 
 
 export default function App() {
-  const [imageUri, setImageUrl] = useState();
-
-
-
-  return <Screen>
-    <ImageInput 
-      imageUri={imageUri} 
-      onChangeImage={uri => setImageUrl(uri)}
-    />
-    </Screen>;
+  return (
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
+  );
 }
