@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FlatList, StyleSheet } from 'react-native';
 
 import Card from '../components/Card';
 import Screen from '../components/Screen';
+import listingsApi from '../api/listings';
 import colors from '../config/colors';
 import routes from '../navigation/routes';
 
@@ -22,6 +23,8 @@ const listings = [
 ];
 
 function ListingsScreen({ navigation }) {
+    const [listings, setListings] = useState([]);
+
     return (
         <Screen style={styles.screen}>
             <FlatList 
