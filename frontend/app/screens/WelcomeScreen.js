@@ -1,7 +1,7 @@
 import React from 'react';
 import { ImageBackground, Image, StyleSheet, View } from 'react-native';
 
-import AppButton from '../components/AppButton';
+import Button from '../components/Button';
 import routes from '../navigation/routes';
 
 function WelcomeScreen({ navigation }) {
@@ -15,8 +15,8 @@ function WelcomeScreen({ navigation }) {
                 <Image style={styles.logo} source={require('../assets/wecservice-logo.png')} />
             </View>
             <View style={styles.buttonContainer}>
-                <AppButton title="Login" onPress={() => navigation.navigate(routes.LOGIN)} />
-                <AppButton title="Register" color="secondary" onPress={() => navigation.navigate(routes.REGISTER)} />
+                <Button title="Login" onPress={() => navigation.navigate(routes.LOGIN)} />
+                <Button title="Register" color="secondary" onPress={() => navigation.navigate(routes.REGISTER)} />
             </View>
         </ImageBackground>
     );
