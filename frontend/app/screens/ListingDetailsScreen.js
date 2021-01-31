@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 import { Image } from "react-native-expo-image-cache";
 
+import ContactSellerForm from '../components/ContactSellerForm';
 import Text from '../components/Text';
 import ListItem from '../components/list/ListItem';
 import colors from '../config/colors';
@@ -10,49 +11,55 @@ function ListingDetailsScreen({ route }) {
     const listing = route.params;
 
     return (
-        <View>
-            <Image 
-                style={styles.image}
-                tint="light"
-                preview={{ uri: listing.images[0].thumbnailUrl }} 
-                uri={listing.images[0].url} 
-            />
-            <View style={styles.detailsContainer}>
-                <Text style={styles.title}>{listing.title}</Text>
-                <Text style={styles.price}>{listing.price}</Text>
-                <View style={styles.userContainer}>
-                    <ListItem 
-                        image={require('../assets/test/avatar.jpeg')}
-                        title="Mateusz Kozikowski"
-                        subTitle="5 Listings"
-                    />
+        <KeyboardAvoidingView
+            behavior="position"
+            keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 100}
+        >
+            <View>
+                <Image 
+                    style={styles.image}
+                    tint="light"
+                    preview={{ uri: listing.images[0].thumbnailUrl }} 
+                    uri={listing.images[0].url} 
+                />
+                <View style={styles.detailsContainer}>
+                    <Text style={styles.title}>{listing.title}</Text>
+                    <Text style={styles.price}>{listing.price}</Text>
+                    <View style={styles.userContainer}>
+                        <ListItem 
+                            image={require('../assets/placeholder70x70.png')}
+                            title="Mateusz Kozikowski"
+                            subTitle="5 Listings"
+                        />
+                    </View>
+                    <ContactSellerForm listing={listing} />
                 </View>
             </View>
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 
 const styles = StyleSheet.create({
     detailsContainer: {
-        padding: 20,
+      padding: 20,
     },
     image: {
-        width: '100%',
-        height: 300,
+      width: "100%",
+      height: 300,
     },
     price: {
-        color: colors.secondary,
-        fontWeight: 'bold',
-        fontSize: 20,
-        marginVertical: 10,
+      color: colors.secondary,
+      fontWeight: "bold",
+      fontSize: 20,
+      marginVertical: 10,
     },
     title: {
-        fontSize: 20,
-        fontWeight: '500',
+      fontSize: 24,
+      fontWeight: "500",
     },
     userContainer: {
-        marginVertical: 40,
-    }
-})
+      marginVertical: 40,
+    },
+  });
 
 export default ListingDetailsScreen;

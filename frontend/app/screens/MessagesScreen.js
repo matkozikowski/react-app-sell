@@ -6,20 +6,7 @@ import Screen from '../components/Screen';
 import ListItemSeparator from '../components/list/ListItemSeparator';
 import ListItemDeleteAction from '../components/list/ListItemDeleteAction';
 
-const initialMessages = [
-    {
-        id: 1,
-        title: 'Aliquam erat volutpat',
-        description: 'Aliquam erat volutpat. Phasellus commodo, sem id vulputate lobortis,',
-        image: require('../assets/test/avatar.jpeg')
-    },
-    {
-        id: 2,
-        title: 'Lorem ipsum dolor',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel ligula vel enim tempus volutpat. Praesent congue libero sed risus ultricies',
-        image: require('../assets/test/avatar.jpeg')
-    }
-]
+const initialMessages = [];
 
 function MessagesScreen(props) {
     const [messages, setMessages] = useState(initialMessages);
@@ -51,7 +38,7 @@ function MessagesScreen(props) {
                             id: 3,
                             title: 'Lorem ipsum dolor sit amet',
                             description: 'Nam vel ligula vel enim tempus volutpat',
-                            image: require('../assets/test/avatar.jpeg')
+                            image: require('../assets/placeholder70x70.png')
                         }  
                     ])
                 }}

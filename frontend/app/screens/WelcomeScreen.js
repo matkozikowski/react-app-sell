@@ -9,10 +9,10 @@ function WelcomeScreen({ navigation }) {
         <ImageBackground 
             blurRadius={10}
             style={styles.background}
-            source={require('../assets/welcome-bg.jpeg')}
+            source={require("../assets/background.jpg")}
         >
             <View style={styles.logoContainer}>
-                <Image style={styles.logo} source={require('../assets/wecservice-logo.png')} />
+                <Image style={styles.logo} source={require("../assets/logo-red.png")} />
             </View>
             <View style={styles.buttonContainer}>
                 <Button title="Login" onPress={() => navigation.navigate(routes.LOGIN)} />
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     },
     logo: {
         width: 100,
+        height: 100,
     },
     logoContainer: {
         position: 'absolute',

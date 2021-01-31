@@ -1,14 +1,15 @@
 {
   "expo": {
-    "name": "wecservice-app",
-    "slug": "wecservice-app",
+    "name": "react-app-sell",
+    "slug": "react-app-sell",
+    "privacy": "unlisted",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "splash": {
       "image": "./app/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#e63c4b"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -20,15 +21,32 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "test.mkcloud.eu",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./app/assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./app/assets/icon.png"
+      },
+      "useNextNotificationsApi": true
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
-    "description": "WecService application for manage",
-    "githubUrl": "https://github.com/matkozikowski/wecservice-app"
+    "description": "",
+    "notification": {
+      "iosDisplayInForeground": true
+    },
+    "extra": {
+      "bugsnag": {
+        "apiKey": "2a21022ce43ce1ee8ec37b394fa96ff1"
+      }
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "@bugsnag/expo/hooks/post-publish.js",
+          "config": {}
+        }
+      ]
+    }
   }
 }
