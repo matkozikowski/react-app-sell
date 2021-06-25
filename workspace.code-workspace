@@ -1,7 +1,19 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	]
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../wecservice-app"
+    },
+    {
+      "path": "../react-app-static"
+    },
+    {
+      "path": "../n2cr-dynamic-boxes"
+    },
+    {
+      "path": "../wp"
+    }
+  ]
 }
